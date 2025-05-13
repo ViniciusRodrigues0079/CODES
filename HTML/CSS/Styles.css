@@ -1,0 +1,47 @@
+body {
+    background-color: #E6E6FA;
+}
+#MainImg {
+    height: 100px;
+    width: 100px;
+    border-radius: 80%;
+    margin-top: 67.5px;
+}
+#ImgDiv {
+        text-align: center; 
+}
+#MainTtl {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;  
+}
+#SecondTtl {
+    font-size: 15px;
+    text-align: center;
+}
+#BioDiv {
+    background-color: white;
+    width: 75%;
+    margin-left: 12.5%;
+    padding-left: 35px;
+    border-radius: 10px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+a:hover {
+    color:black;
+    font-weight: bold;
+}
+a:link {
+    color:black;
+    font-weight: bold;
+}
+a:visited {
+    color:black;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+}

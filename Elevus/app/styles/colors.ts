@@ -1,0 +1,5 @@
+const azul = "#0075C4"
+const vermelho = "#FF0000"
+const preto = "#000000"
+const preto_barra = "#1E1E1E"
+const branco = "#FFFFFF"

@@ -127,3 +127,71 @@ SELECT COUNT (DISTINCT gender) FROM employees;
 
 SELECT AVG (salary) FROM employees;
 SELECT ROUND(AVG(salary), 2) FROM employees;
+
+SELECT MAX(salary) FROM employees;
+SELECT MIN(salary) FROM employees;
+
+SELECT SUM(salary) FROM employees;
+
+SELECT gender, MAX(salary) FROM employees GROUP BY gender;
+SELECT gender, MAX(salary) FROM employees GROUP BY gender HAVING MAX(salary) > 7000;
+
+SELECT employees.id, mentorships.mentor_id, employees.em_name AS 'Mentor', mentorships.project AS 'Project Name'
+FROM mentorships
+JOIN employees
+ON employees.id = mentorships.mentor_id;
+
+SELECT employees.em_name AS 'Mentor', mentorships.project AS 'Project Name'
+FROM mentorships
+JOIN employees
+ON employees.id = mentorships.mentor_id;
+
+SELECT em_name, salary FROM employees WHERE gender = 'M'
+UNION
+SELECT em_name, years_in_company FROM employees WHERE gender = 'F';
+
+SELECT mentor_id FROM employees
+UNION ALL
+SELECT id FROM employees WHERE gender = 'F';
+
+CREATE VIEW myView AS
+SELECT employees.id, mentorships.mentor_id, employees.em_name AS 'Mentor', mentorships.project AS 'Project Name'
+FROM mentorships
+JOIN employees
+ON employees.id = mentorships.mentor_id;
+
+ALTER VIEW myView AS
+SELECT employees.id, mentorships.mentor_id, employees.em_name AS 'Mentor', mentorships.project AS 'Project'
+FROM mentorships
+JOIN employees
+ON employees.id = mentorships.mentor_id;
+
+DROP VIEW IF EXISTS myView;
+
+CREATE TABLE ex_employees (
+  em_id INT PRIMARY KEY,
+  em_name VARCHAR(255) NOT NULL,
+  gender CHAR(1) NOT NULL,
+  date_left TIMESTAMP DEFAULT NOW()
+
+);
+
+DELIMITER $$
+
+CREATE TRIGGER update_ex_employees BEFORE DELETE ON employees FOR EACH ROW
+BEGIN
+  INSERT INTO ex_employees (em_id, em_name, gender) VALUES (OLD.id, OLD.em_name, OLD.gender);
+END $$
+
+DELIMITER;
+
+DELETE FROM employees WHERE id = 7;
+
+SELECT * FROM employees;
+SELECT * FROM ex_employees;
+
+DROP TRIGGER IF EXISTS update_ex_employees;
+
+
+
+DROP DATABASE companyHR;

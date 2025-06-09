@@ -8,7 +8,7 @@
 <body style="background-color: lightgray; ">
 
 <h1  style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: powderblue; background-color: white; margin-bottom: 0px; width: 400px; margin-left: 500px;">Calculadora de IMC</h1>
-<form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>" style="background-color: white; height: 200px; width: 400px; margin-top: 0px; text-align: right; padding-top: 50px; margin-left: 500px;">
+<form method="post" action="" style="background-color: white; height: 200px; width: 400px; margin-top: 0px; text-align: right; padding-top: 50px; margin-left: 500px;">
     <label style ="font-family: Arial, Helvetica, sans-serif; margin-right: 35px;">Peso, em Kg: </label><input type = number placeholder = "Digite aqui o seu peso" name = "peso" style="width: 500; text-align:center; font-family: Arial, Helvetica, sans-serif; margin-right: 30px; width: 200px;" required step="0.01">
     <br> <br>
     <label style ="font-family: Arial, Helvetica, sans-serif;">Altura, em Metros: </label><input type = number placeholder = "Digite aqui a sua altura" name = "altura" style="width: 500; text-align:center; font-family: Arial, Helvetica, sans-serif; margin-right: 30px; width: 200px; margin-top:20px;" required step="0.01">
